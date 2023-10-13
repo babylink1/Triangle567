@@ -1,59 +1,76 @@
 # -*- coding: utf-8 -*-
 """
-Updated Sep 24, 2023
+Updated Oct 13, 2023
 The primary goal of this file is to demonstrate a simple unittest implementation
 
 @author: Lijuan Liu
-
 """
-from Triangle import classifyTriangle
 import unittest
+from Triangle import classifyTriangle
 
 
 class TestTriangles(unittest.TestCase):
 
-    def testEquilateral(self):
-        # Test Equilateral triangle
+    def test_equilateral(self):
+        """
+        Test Equilateral triangle
+        """
         self.assertEqual(classifyTriangle(5, 5, 5),
                          'Equilateral', '5,5,5 should be Equilateral')
 
-    def testRightTriangle(self):
-        # Test Right triangle
+    def test_right_triangle(self):
+        """
+        Test Right triangle
+        """
         self.assertEqual(classifyTriangle(3, 4, 5),
                          'Right', '3,4,5 should be Right')
 
-    def testIsosceles(self):
-        # Test Isosceles triangle
+    def test_isosceles(self):
+        """
+        Test Isosceles triangle
+        """
         self.assertEqual(classifyTriangle(5, 5, 6),
                          'Isosceles', '5,5,6 should be Isosceles')
 
-    def testScalene(self):
-        # Test Scalene triangle
+    def test_scalene(self):
+        """
+        Test Scalene triangle
+        """
         self.assertEqual(classifyTriangle(7, 8, 9),
                          'Scalene', '7,8,9 should be Scalene')
 
-    def testNotATriangle(self):
-        # Test Not a triangle
+    def test_not_a_triangle(self):
+        """
+        Test Not a triangle
+        """
         self.assertEqual(classifyTriangle(1, 2, 3),
                          'NotATriangle', '1,2,3 should be NotATriangle')
 
-    def testInvalidInputA(self):
-        # Test Invalid input (out of range)
+    def test_invalid_input_a(self):
+        """
+        Test Invalid input (out of range)
+        """
         self.assertEqual(classifyTriangle(201, 200, 199),
                          'InvalidInput', '201,200,199 should be InvalidInput')
 
-    def testInvalidInputB(self):
-        # Test Invalid input (negative sides)
+    def test_invalid_input_b(self):
+        """
+        Test Invalid input (negative sides)
+        """
         self.assertEqual(classifyTriangle(-2, 3, 3),
                          'InvalidInput', '-2,3,3 should be InvalidInput')
 
-    def testInvalidInputC(self):
-        # Test Invalid input (zero side)
+    def test_invalid_input_c(self):
+        """
+        Test Invalid input (zero side)
+        """
         self.assertEqual(classifyTriangle(0, 0, 0),
                          'InvalidInput', '0,0,0 should be InvalidInput')
 
-    def testInvalidInputD(self):
-        # Test Invalid input (float sides)
+    def test_invalid_input_d(self):
+        """
+        Test Invalid input (float sides)
+        """
         self.assertEqual(classifyTriangle(1.3, 2, 2.3),
                          'InvalidInput', '1.3,2,2.3 should be InvalidInput')
 
